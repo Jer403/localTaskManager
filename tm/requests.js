@@ -218,24 +218,19 @@ export function createProjectButtons(Lists) {       //This needs the next one
     if (!Lists) {
         return null;
     }
-    Lists.then(data => {
-        if (!data) {
-            return;
-        }
-        else if (data.projects != "") {
-            let nombres = data.listProjectName.split("/");
-            let ids = data.projects.split("/");
 
-            for (let i = 0; i < ids.length; i++) {
-                getProjectsBox().appendChild(createOneProjectButton(nombres[i], ids[i]))
-            }
 
-            openSelectedProjectOrFirstProject();
-        } else {
-            getProjectsBox().appendChild(noProjectsFound())
-        }
+    if (Lists.length != 0) {
+        Lists.map((key, value) => {
+            let id = key.split("-")[1];
+            let name = JSON.parse(value).nodeProjectName;
+            getProjectsBox().appendChild(createOneProjectButton(name, id));
+        })
 
-    });
+        openSelectedProjectOrFirstProject();
+    } else {
+        getProjectsBox().appendChild(noProjectsFound())
+    }
 
 }
 
@@ -251,13 +246,23 @@ export function createProjectButtons(Lists) {       //This needs the next one
 
 
 export async function loadProjectsFromUsers() {   //Gets all the projects ids
-    let bodyContent = {}
-    bodyContent.tiempo = "" + obtenerCookie("keep");
-    bodyContent = JSON.stringify(bodyContent);
 
     loading(getProjectsBox())
 
-    console.log(localStorage)
+    const lists = [];
+    const prefix = 'localTmProject-';
+
+    // Iterar sobre todas las claves en localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+
+        // Verificar si la clave comienza con el prefijo deseado
+        if (key.startsWith(prefix)) {
+            // Obtener el valor asociado a la clave y agregarlo al array
+            const value = localStorage.getItem(key);
+            projects.push({ key, value });
+        }
+    }
 
     return lists;
 }
