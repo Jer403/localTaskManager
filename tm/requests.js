@@ -9,7 +9,7 @@ export async function createNewProject() {
 
     let id = Math.floor(Math.random() * 100000);
     let emptyData = {};
-    emptyData.nodeProjectName = "Untitled Project";
+    emptyData.listProjectName = "Untitled Project";
     emptyData = JSON.stringify(emptyData)
     localStorage.setItem(`localTmProject-${id}`, emptyData)
 
@@ -177,7 +177,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    loadProject(getSurfaceList(), item, true);
+    loadProject(getSurfaceList(), JSON.parse(item), true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
@@ -195,7 +195,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
     console.log(Project)
-    let listDoc = JSON.parse(Project.listProject);
+    let listDoc = Project.listProject;
     if (listDoc) {
         listDoc.forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
@@ -227,7 +227,7 @@ export function createProjectButtons(Lists) {       //This needs the next one
         Lists.map(({ key, value }) => {
             console.log(value)
             let id = key.split("-")[1];
-            let name = JSON.parse(value).nodeProjectName;
+            let name = JSON.parse(value).listProjectName;
             getProjectsBox().appendChild(createOneProjectButton(name, id));
         })
 
