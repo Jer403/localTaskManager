@@ -119,7 +119,7 @@ export async function updateCalendar(e, date) {                     //Updates th
     })
 
     let datos = {};
-    datos.listProject = JSON.stringify(listDoc);
+    datos.listProject = listDoc;
     datos = JSON.stringify(datos);
 
     localStorage.setItem(`calendarList_${date}`, datos)
@@ -139,9 +139,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         return;
     }
 
-    console.log(item)
-    console.log("Calendar: ", JSON.parse(JSON.parse(item).listProject))
-    loadProject(surface, JSON.parse(item), false);
+    loadProject(surface, JSON.parse(item).listProject, false);
 
 
 }
@@ -171,8 +169,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    console.log("List: ", JSON.parse(item).listProject)
-    loadProject(getSurfaceList(), JSON.parse(item), true);
+    loadProject(getSurfaceList(), JSON.parse(item).listProject, true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
