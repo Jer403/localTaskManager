@@ -1019,14 +1019,16 @@ spaan{
         align-items: stretch;
     }
     .calendar-list {
-        min-width:302px
+        min-width: 75vw;
+        width: 75vw;
+        max-width: 400px;
     }
     .disappear{
         opacity: 1;
     }   
     .main-article{
         width: 100vw;
-        min-width: none;
+        min-width: 100px;
         overflow-y: auto;
     }
     .aside{
