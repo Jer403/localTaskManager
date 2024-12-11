@@ -851,7 +851,7 @@ spaan{
 
 
 
-@media (min-width: 400px) {
+@media (min-width: 800px) {
     .calendar-list {
         min-width:302px
     }
