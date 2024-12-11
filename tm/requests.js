@@ -131,7 +131,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
 
     let item = localStorage.getItem(`calendarList_${date}`)
     console.log(item)
-    if (item == "null") {
+    if (item == "null" || !item) {
         surface.appendChild(createListElement("", "f", "f", false, surface))
         return;
     }
@@ -169,7 +169,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
     let item = localStorage.getItem(`localTmProject-${id}`)
 
-    if (item == "null") {
+    if (item == "null" || !item) {
         item = {};
         item.listProject = "";
     }
