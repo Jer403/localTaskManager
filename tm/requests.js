@@ -9,7 +9,7 @@ import { cleanSurface, buildErrorLog, getCurrentListProject, listNameLang, loadi
 export async function createNewProject() {
 
     let id = Math.floor(Math.random() * 100000);
-    localStorage.setItem(`localTmProject-${id}`, "")
+    localStorage.setItem(`localTmProject-${id}`, "null")
 
     removeInfoLabel(getProjectsBox(), "nop");
 
