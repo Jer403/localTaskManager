@@ -139,6 +139,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         return;
     }
 
+    console.log(item)
     console.log("Calendar: ", JSON.parse(JSON.parse(item).listProject))
     loadProject(surface, JSON.parse(item), false);
 
