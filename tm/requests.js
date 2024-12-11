@@ -9,7 +9,7 @@ import { cleanSurface, buildErrorLog, getCurrentListProject, listNameLang, loadi
 export async function createNewProject() {
 
     let id = Math.floor(Math.random() * 100000);
-    localStorage.setItem(`project-${id}`, "")
+    localStorage.setItem(`localTmProject-${id}`, "")
 
     removeInfoLabel(getProjectsBox(), "nop");
 
@@ -34,7 +34,7 @@ export async function deleteProject(e) {
     let pregunta = confirm("¿Esta seguro/a de que quiere eliminar ese projecto?")
     if (pregunta) {
 
-        localStorage.removeItem(`project-${idToDelete}`)
+        localStorage.removeItem(`localTmProject-${idToDelete}`)
 
 
         if (getCurrentListProject() == idToDelete) {
@@ -85,7 +85,7 @@ export async function update(id) {                     //Updates the project in 
     dataToSave.listProject = listDoc;
     dataToSave = JSON.stringify(dataToSave)
 
-    localStorage.setItem(`project-${id}`, dataToSave)
+    localStorage.setItem(`localTmProject-${id}`, dataToSave)
 
     buildErrorLog("green", "Datos guardados exitosamente");
 }
@@ -167,7 +167,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
 
 export async function loadListOnAction(id) {  //When you click in a project button or onload
 
-    let item = localStorage.getItem(`project-${id}`)
+    let item = localStorage.getItem(`localTmProject-${id}`)
 
     if (item == "null") {
         item = {};
@@ -257,16 +257,7 @@ export async function loadProjectsFromUsers() {   //Gets all the projects ids
 
     loading(getProjectsBox())
 
-    let peticion = await sendRequest('POST', 'application/json', bodyContent,
-        "http://localhost:8080/api/tm/getAllLists")
-
-
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
-    }
-
-    let lists = await peticion.json();
+    console.log(localStorage)
 
     return lists;
 }
