@@ -250,7 +250,7 @@ body, html {
 
 .calendar-list{
     margin: 10px;
-    height: 326px;
+    height: calc(100% - 20px);
     width: 460px;
     border-radius: 8px;
     min-width: 460px;
