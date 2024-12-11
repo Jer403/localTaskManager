@@ -221,7 +221,7 @@ export function createProjectButtons(Lists) {       //This needs the next one
     }
 
     if (Lists.length != 0) {
-        Lists.map((key, value) => {
+        Lists.map(({ key, value }) => {
             let id = key.split("-")[1];
             let name = JSON.parse(value).nodeProjectName;
             getProjectsBox().appendChild(createOneProjectButton(name, id));
