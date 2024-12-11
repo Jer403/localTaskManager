@@ -139,6 +139,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         return;
     }
 
+    console.log("Calendar: " + item)
     loadProject(surface, JSON.parse(item), false);
 
 
@@ -177,6 +178,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
+    console.log("List: " + item)
     loadProject(getSurfaceList(), JSON.parse(item), true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
@@ -194,10 +196,8 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
-    console.log(Project)
-    let listDoc = Project.listProject;
     if (listDoc) {
-        JSON.parse(listDoc).forEach((l) => {
+        listDoc.forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
             surface.appendChild(element);
         })
