@@ -65,7 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     width: calc(100vw - 340px);
-    min-width: 560px;
+    min-width: 400px;
     height: 100vh;
     background: var(--background-light-primary);
 }
@@ -849,6 +849,13 @@ spaan{
 
 
 
+
+
+@media (min-width: 400px) {
+    .calendar-list {
+        min-width:302px
+    }
+}
 
 
 
