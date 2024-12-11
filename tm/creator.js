@@ -169,7 +169,10 @@ export function createListElement(text, check, fav, main, surface) {
                 (saveBtn) ? setIsSaveToFalse(saveBtn) : setIsSaveToFalse();
                 surface.removeChild(e.currentTarget.parentNode.parentNode.parentNode)
             }
+            return;
         }
+        (saveBtn) ? setIsSaveToFalse(saveBtn) : setIsSaveToFalse();
+        surface.removeChild(e.currentTarget.parentNode.parentNode.parentNode)
     })
 
 
