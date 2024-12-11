@@ -133,6 +133,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
 
     if (item == "null") {
         surface.appendChild(createListElement("", "f", "f", false, surface))
+        return;
     }
 
     loadProject(surface, JSON.parse(item), false);
@@ -190,8 +191,8 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
-    let listDoc = JSON.parse(Project.listProject);
     if (listDoc) {
+        let listDoc = JSON.parse(Project.listProject);
         listDoc.forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
             surface.appendChild(element);
