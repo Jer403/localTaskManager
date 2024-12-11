@@ -102,13 +102,8 @@ export function getSurfaceList() {
 
 // EVENT LISTENERS -----------------------------------------------------------------------
 
-window.addEventListener("load", (e) => {
-	createProjectButtons(loadProjectsFromUsers())
-
-	if (checkIfUserDataIsLoaded(user)) {
-		user = getUser();
-		setLoginToLogout(linkAuth);
-	}
+window.addEventListener("load", async (e) => {
+	createProjectButtons(await loadProjectsFromUsers())
 
 
 	calendarSurface.appendChild(createCalendarList(convertDateToString(dateBackward), dateBackward.getMonth(), getLang()));

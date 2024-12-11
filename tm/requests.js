@@ -259,9 +259,10 @@ export async function loadProjectsFromUsers() {   //Gets all the projects ids
         if (key.startsWith(prefix)) {
             // Obtener el valor asociado a la clave y agregarlo al array
             const value = localStorage.getItem(key);
-            projects.push({ key, value });
+            lists.push({ key, value });
         }
     }
+
 
     return lists;
 }
