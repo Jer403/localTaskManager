@@ -1025,7 +1025,7 @@ spaan{
         opacity: 1;
     }   
     .main-article{
-        width: 100%;
+        width: 100vw;
         overflow-y: auto;
     }
     .aside{
