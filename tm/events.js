@@ -1,4 +1,4 @@
-import { getCalendarWidth } from "../../taskmanager.js";
+import { getCalendarWidth } from "../taskmanager.js";
 import { convertDateToString, getLang } from "../utils.js";
 import { createCalendarList } from "./creator.js";
 import { appearInput, appearModBtns, checkFromBox, disappearModBtns, getActualCalendarPosition, getDaysToBackward, getDaysToForward, OnInput, setActualCalendarPosition, setDaysToBackward, setDaysToForward, setIsSaveToFalse, setValue } from "./tmUtils.js";

@@ -1,4 +1,4 @@
-import { getSaveList } from "../../taskmanager.js";
+import { getSaveList } from "../taskmanager.js";
 import { appearInput, setIsSaveToFalse, setIsSaveToTrue } from "./tmUtils.js";
 import { convertStringDateToStringEn, convertStringDateToStringEs, getMonthEn, getMonthEs } from "../utils.js";
 import { copyText, dragLeaveEvent, dragOverEvent, dropEvent, editProjectName, hideModifiButtons, setInputEventListener, setLiEventListener, showModifiButtons } from "./events.js";

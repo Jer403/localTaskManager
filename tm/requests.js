@@ -1,5 +1,4 @@
-import { getListName, getProjectsBox, getSurfaceList } from "../../taskmanager.js";
-import { obtenerCookie, sendRequest } from "../utils.js";
+import { getListName, getProjectsBox, getSurfaceList } from "../taskmanager.js";
 import { createListElement, createOneProjectButton, noProjectsFound, removeInfoLabel } from "./creator.js";
 import { cleanSurface, buildErrorLog, getCurrentListProject, listNameLang, loading, openFirstProject, openSelectedProjectOrFirstProject, setActualProject, setCurrentListProject, showErrors } from "./tmUtils.js";
 

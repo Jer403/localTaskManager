@@ -1,4 +1,4 @@
-import { getErrorLog, getProjectsBox, getSaveList } from "../../taskmanager.js";
+import { getErrorLog, getProjectsBox, getSaveList } from "../taskmanager.js";
 import { convertStringDateToStringEn, convertStringDateToStringEs, eliminarCookie, getMonthEn, getMonthEs, removeUser } from "../utils.js";
 import { loadListOnAction } from "./requests.js";
 
