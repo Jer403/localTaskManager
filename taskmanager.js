@@ -2,11 +2,11 @@
 
 // VARIABLE INSTANSIATION ----------------------------------------------------------------
 
-import { createCalendarList, createListElement } from "./functions/tm/creator.js";
-import { calendarBackwardMove, calendarForwardMove, editProjectName } from "./functions/tm/events.js";
-import { loadProjectsFromUsers, createNewProject, update, createProjectButtons } from "./functions/tm/requests.js";
-import { checkLang, getCurrentListProject, langChange, moonset, setIsSaveToTrue, sunset, themeChange, setLoginToLogout, setDaysToBackward, setDaysToForward, setActualCalendarPosition, logout } from "./functions/tm/tmUtils.js";
-import { checkIfUserDataIsLoaded, convertDateToString, getLang, getUser } from "./functions/utils.js";
+import { createCalendarList, createListElement } from "./tm/creator.js";
+import { calendarBackwardMove, calendarForwardMove, editProjectName } from "./tm/events.js";
+import { loadProjectsFromUsers, createNewProject, update, createProjectButtons } from "./tm/requests.js";
+import { checkLang, getCurrentListProject, langChange, moonset, setIsSaveToTrue, sunset, themeChange, setLoginToLogout, setDaysToBackward, setDaysToForward, setActualCalendarPosition, logout } from "./tm/tmUtils.js";
+import { checkIfUserDataIsLoaded, convertDateToString, getLang, getUser } from "./utils.js";
 
 
 const checkboxs = document.querySelectorAll(".list-element-checkbox");
