@@ -174,13 +174,20 @@ export function createListElement(text, check, fav, main, surface) {
         (saveBtn) ? setIsSaveToFalse(saveBtn) : setIsSaveToFalse();
         surface.removeChild(e.currentTarget.parentNode.parentNode.parentNode)
     })
-
-
     star.addEventListener("click", (e) => {
         e.stopPropagation();
         setIsSaveToFalse(saveBtn)
         li.classList.toggle("favorite")
     })
+    copy.addEventListener("click", (e) => {
+        e.stopPropagation();
+        copyText(e.currentTarget);
+    });
+
+    edit.addEventListener("dblclick", (e) => { e.stopPropagation() })
+    del.addEventListener("dblclick", (e) => { e.stopPropagation() })
+    star.addEventListener("dblclick", (e) => { e.stopPropagation() })
+    copy.addEventListener("dblclick", (e) => { e.stopPropagation() })
 
     if (check == "t") {
         checkFromBox(box);
@@ -194,11 +201,6 @@ export function createListElement(text, check, fav, main, surface) {
         e.stopPropagation();
         checkTheBox(e.currentTarget);
     })
-
-    copy.addEventListener("click", (e) => {
-        e.stopPropagation();
-        copyText(e.currentTarget);
-    });
 
     setLiEventListener(li, saveBtn);
     (saveBtn) ? setInputEventListener(texta, txHeight, saveBtn) : setInputEventListener(texta, txHeight)
