@@ -197,7 +197,7 @@ export function loadProject(surface, Project, main) {       		   //This is neede
     console.log(Project)
     let listDoc = Project.listProject;
     if (listDoc) {
-        listDoc.forEach((l) => {
+        JSON.parse(listDoc).forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
             surface.appendChild(element);
         })
