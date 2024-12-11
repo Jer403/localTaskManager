@@ -136,7 +136,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         surface.appendChild(createListElement("", "f", "f", false, surface))
     }
 
-    loadProject(surface, item, false);
+    loadProject(surface, JSON.parse(item), false);
 
 
 }
@@ -174,7 +174,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    loadProject(getSurfaceList(), item, true);
+    loadProject(getSurfaceList(), JSON.parse(item), true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
