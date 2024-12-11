@@ -194,7 +194,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
-
+    console.log(Project)
     let listDoc = JSON.parse(Project.listProject);
     if (listDoc) {
         listDoc.forEach((l) => {
