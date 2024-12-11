@@ -851,11 +851,7 @@ spaan{
 
 
 
-@media (max-width: 900px) {
-    .calendar-list {
-        min-width:302px
-    }
-}
+
 
 
 
@@ -1005,4 +1001,15 @@ spaan{
     100%{
         box-shadow: 0 0 4px 2px var(--border-dark-secondary)
     }
+}
+
+
+
+@media (max-width: 900px) {
+    .calendar-list {
+        min-width:302px
+    }
+    .disappear{
+        opacity: 1;
+    }   
 }
