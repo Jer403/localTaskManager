@@ -139,7 +139,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         return;
     }
 
-    console.log("Calendar: " + item)
+    console.log("Calendar: ", item)
     loadProject(surface, JSON.parse(item), false);
 
 
@@ -178,7 +178,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    console.log("List: " + item)
+    console.log("List: ", item)
     loadProject(getSurfaceList(), JSON.parse(item), true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
