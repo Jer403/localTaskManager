@@ -130,7 +130,7 @@ export async function updateCalendar(e, date) {                     //Updates th
 export async function loadCalendarList(date, surface) {  //When you click in a project button or onload
 
     let item = localStorage.getItem(`calendarList_${date}`)
-    console.log(item)
+
     if (item == "null" || !item) {
         surface.appendChild(createListElement("", "f", "f", false, surface))
         return;
