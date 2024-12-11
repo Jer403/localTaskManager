@@ -117,38 +117,46 @@ errorLog.addEventListener("click", (e) => {
 	e.currentTarget.classList.remove("move-log");
 })
 
-saveList.addEventListener("click", (e) => {
-	if (getCurrentListProject() != "null") {
-		let id = document.querySelector(".actual-list").dataset.id;
-		update(id);
-		setIsSaveToTrue(e.currentTarget);
+
+
+
+paste.addEventListener("click", () => {
+	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
+		const element = createListElement(localStorage.getItem("clipboard"), "f", true, surfaceList);
+		surfaceList.appendChild(element);
+		saveList.classList.add("unsave")
+	}
+})
+
+
+edit.addEventListener("click", (e) => {
+	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
+		editProjectName(e.currentTarget.parentNode.parentNode);
 	}
 })
 
 plus.addEventListener("click", (e) => {
-	if (user) {
+	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
 		const element = createListElement("", "f", true, surfaceList);
 		surfaceList.appendChild(element);
 		e.currentTarget.nextElementSibling.classList.add("unsave")
 	}
 })
 
-refresh.addEventListener("click", () => {
-	if (user) {
-		createProjectButtons(loadProjectsFromUsers())
+saveList.addEventListener("click", (e) => {
+	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
+		let id = document.querySelector(".actual-list").dataset.id;
+		update(id);
+		setIsSaveToTrue(e.currentTarget);
 	}
+})
+
+refresh.addEventListener("click", () => {
+	createProjectButtons(loadProjectsFromUsers())
 })
 
 listsPlus.addEventListener("click", () => {
-	if (linkAuth.dataset.id == "logout") {
-		createNewProject(getLang())
-	}
-})
-
-edit.addEventListener("click", (e) => {
-	if (getCurrentListProject() != "null") {
-		editProjectName(e.currentTarget.parentNode.parentNode);
-	}
+	createNewProject(getLang())
 })
 
 forward.addEventListener("click", (e) => {
@@ -217,16 +225,6 @@ themeBtn.addEventListener("click", (e) => {
 		themeChange(false, themeBtn);
 	}
 })
-
-
-paste.addEventListener("click", () => {
-	if (getCurrentListProject() != "null") {
-		const element = createListElement(localStorage.getItem("clipboard"), "f", true, surfaceList);
-		surfaceList.appendChild(element);
-		saveList.classList.add("unsave")
-	}
-})
-
 
 staticLinks.forEach((s) => {
 	s.addEventListener("click", (e) => {
