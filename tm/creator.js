@@ -162,7 +162,7 @@ export function createListElement(text, check, fav, main, surface) {
     })
     del.addEventListener("click", (e) => {
         e.stopPropagation();
-
+        console.log("asd")
         if (li.classList.contains("favorite")) {
             let ask = confirm("Estas seguro/a que quieres eliminar esta tarea?")
             if (ask) {
