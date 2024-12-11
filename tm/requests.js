@@ -218,7 +218,7 @@ export function createProjectButtons(Lists) {       //This needs the next one
         return null;
     }
 
-
+    console.log(Lists);
     if (Lists.length != 0) {
         Lists.map((key, value) => {
             let id = key.split("-")[1];
