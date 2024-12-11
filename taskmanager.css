@@ -1023,6 +1023,9 @@ spaan{
         width: 75vw;
         max-width: 400px;
     }
+    .top-section{
+        height: 300px;
+    }
     .disappear{
         opacity: 1;
     }   
