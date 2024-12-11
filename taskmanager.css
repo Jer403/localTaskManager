@@ -1026,6 +1026,7 @@ spaan{
     }   
     .main-article{
         width: 100vw;
+        min-width: none;
         overflow-y: auto;
     }
     .aside{
