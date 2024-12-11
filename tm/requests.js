@@ -174,7 +174,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    loadProject(getSurfaceList(), JSON.parse(item), true);
+    loadProject(getSurfaceList(), item, true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
