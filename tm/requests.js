@@ -169,7 +169,9 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    loadProject(getSurfaceList(), JSON.parse(item).listProject, true);
+    item = JSON.parse(item);
+
+    loadProject(getSurfaceList(), item.listProject, true, item.listProjectName);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
@@ -184,7 +186,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 
 
-export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
+export function loadProject(surface, Project, main, listProjectName) {       		   //This is needed in the above one  
     cleanSurface(surface);
     if (Project) {
         Project.forEach((l) => {
@@ -193,7 +195,7 @@ export function loadProject(surface, Project, main) {       		   //This is neede
         })
     }
     if (surface == getSurfaceList()) {
-        getListName().textContent = Project.listProjectName;
+        getListName().textContent = listProjectName;
     }
 }
 
