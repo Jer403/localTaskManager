@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <script src="https://kit.fontawesome.com/772cd4748b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" src="/css/taskmanager.css" th:href="@{/css/taskmanager.css}" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <main class="main theme">
+        <aside class="aside theme">
+            <section id="top-aside-section" class="top-aside-section theme">
+                <p class="top-projects-l lang" en="Lists" es="Listas">Lists</p>
+                <div id="top-icons" class="top-icons">
+                    <button class="top-icon refresh theme" title="Refresh" id="refresh"><span class="fa fa-refresh"></span></button><button class="top-icon search theme" title="Search" id="search"><span class="fa fa-search"></span></button><button class="top-icon newfile theme" title="Add list" id="lists-plus"><span class="fa fa-plus"></span></button>
+                </div>
+            </section>
+
+            <section class="lists-aside-section theme">
+            </section>
+
+
+            
+            
+        </aside>
+        
+        <article class="main-article theme">
+            <section class="top-section theme">
+                <button class="date-btns date-back theme" id="backward"><span class="fa fa-angle-left"></span></button>
+                <section class="calendar-lists" id="calendar-lists">
+                    
+                </section>
+                <button class="date-btns date-next theme" id="forward"><span class=" fas fa-angle-right"></span></button>
+            </section>
+            <section class="main-section theme">
+                <div class="info-elements-list theme">
+                    <p class="list-name" id="list-name"></p>
+                    <input type="text" class="list-input hide" maxlength="50">
+                    <div class="action-btns-box">
+                        <button class="action-btn theme" title="Paste" id="paste" style="display:flex;"><span class="fa fa-paste"></span></button>  <button class="action-btn theme" title="Edit list name" id="edit" style="display:flex;"><span class="fa fa-pen"></span></button><button class="action-btn theme" title="Add task" id="plus" style="display:flex;"><span class="fa fa-plus"></span></button><button class="action-btn theme" title="Save" id="save" style="display:flex;"><span class="fa fa-save"></span></button>
+                    </div>
+                </div>
+                <ul class="elements-list theme" id="elements-list">
+                    
+                </ul>
+            </section>
+        </article>
+        <aside class="settings-aside theme">
+            <div class="option-btns-box">
+                <div class="option-btn-box">
+                    <button class="option-btn theme links static-link" id="link-home" data-id="home"><span class="fa fa-home option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="Home" es="Inicio">Home</p>
+                    </div>
+                </div>
+                <div class="option-btn-box">
+                    <button class="option-btn theme links static-link" id="link-dashboard" data-id="network"><span class="fa fa-share-alt option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="Network Board" es="Tablero de red">Network Board</p>
+                    </div>
+                </div>
+                <div class="option-btn-box">
+                    <button class="option-btn theme links static-link" id="link-projectmanager" data-id="projectmanager"><span class="fa fa-users option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="WorkSpace" es="Espacio de trabajo">WorkSpace</p>
+                    </div>
+                </div>
+                <div class="option-btn-box">
+                    <button class="option-btn theme links" id="link-auth" data-id="login"><span class="fas fa-sign-in-alt option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="Login" es="Iniciar Sesión">Login</p>
+                    </div>
+                    <div class="option-label theme hide">
+                        <p class="option-label-p lang" en="Logout" es="Cerrar Sesión">Logout</p>
+                    </div>
+                </div>
+            </div>
+            <div class="option-btns-box">
+                <div class="option-btn-box">
+                    <button class="option-btn theme lang-btn" id="lang-btn"><span class="fas fa-language option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="Language" es="Lenguaje">Language</p>
+                    </div>
+                </div>
+                <div class="option-btn-box">
+                    <button class="option-btn theme theme-btn" id="theme-btn"><span class="fas fa-moon option-icon"></span></button>
+                    <div class="option-label theme">
+                        <p class="option-label-p lang" en="Theme" es="Tema">Theme</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </aside>
+    </main>
+    <section class="error-log-section">
+        <div class="error-log-message">
+        </div>
+   </section>
+    <script type="module" src="/js/taskmanager.js"></script>
+</body>
+</html>
