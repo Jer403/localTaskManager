@@ -139,19 +139,11 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
         return;
     }
 
-    console.log("Calendar: ", item)
+    console.log("Calendar: ", JSON.parse(item).listProject)
     loadProject(surface, JSON.parse(item), false);
 
 
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -178,7 +170,7 @@ export async function loadListOnAction(id) {  //When you click in a project butt
         item.listProject = "";
     }
 
-    console.log("List: ", item)
+    console.log("List: ", JSON.parse(item).listProject)
     loadProject(getSurfaceList(), JSON.parse(item), true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
@@ -196,8 +188,8 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
-    if (listDoc) {
-        listDoc.forEach((l) => {
+    if (Project) {
+        Project.forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
             surface.appendChild(element);
         })
@@ -225,7 +217,6 @@ export function createProjectButtons(Lists) {       //This needs the next one
 
     if (Lists.length != 0) {
         Lists.map(({ key, value }) => {
-            console.log(value)
             let id = key.split("-")[1];
             let name = JSON.parse(value).listProjectName;
             getProjectsBox().appendChild(createOneProjectButton(name, id));
