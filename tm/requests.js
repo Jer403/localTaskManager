@@ -6,25 +6,14 @@ import { cleanSurface, buildErrorLog, getCurrentListProject, listNameLang, loadi
 
 
 
-export async function createNewProject(lang) {
-    let bodyContent = {};
-    bodyContent.lang = lang;
-    bodyContent = JSON.stringify(bodyContent);
+export async function createNewProject() {
 
-    let peticion = await sendRequest('POST', 'application/json', bodyContent,
-        "http://localhost:8080/api/tm/createList")
-
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
-    }
-
-    let data = await peticion.json();
-
+    let id = Math.floor(Math.random() * 100000);
+    localStorage.setItem(`project-${id}`, "")
 
     removeInfoLabel(getProjectsBox(), "nop");
 
-    let btn = createOneProjectButton(listNameLang(), data.projects)
+    let btn = createOneProjectButton(listNameLang(), id)
 
     getProjectsBox().appendChild(btn);
 
@@ -44,18 +33,9 @@ export async function deleteProject(e) {
 
     let pregunta = confirm("¿Esta seguro/a de que quiere eliminar ese projecto?")
     if (pregunta) {
-        let data = {};
-        data.listId = idToDelete;
-        data = JSON.stringify(data);
 
+        localStorage.removeItem(`project-${idToDelete}`)
 
-        let peticion = await sendRequest('POST', 'application/json', data,
-            "http://localhost:8080/api/tm/deleteList")
-
-        if (!peticion.ok) {
-            showErrors(peticion.status)
-            return null;
-        }
 
         if (getCurrentListProject() == idToDelete) {
             setCurrentListProject(null);
@@ -100,21 +80,12 @@ export async function update(id) {                     //Updates the project in 
             "fav":"${fav}"}`);
     })
 
+    let dataToSave = {};
+    dataToSave.listProjectName = projectName;
+    dataToSave.listProject = listDoc;
+    dataToSave = JSON.stringify(dataToSave)
 
-
-    let datos = {};
-    datos.listId = id;
-    datos.listProject = JSON.stringify(listDoc);
-    datos.listProjectName = projectName;
-    datos = JSON.stringify(datos);
-
-    let peticion = await sendRequest('POST', 'application/json', datos,
-        "http://localhost:8080/api/tm/updateList")
-
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
-    }
+    localStorage.setItem(`project-${id}`, dataToSave)
 
     buildErrorLog("green", "Datos guardados exitosamente");
 }
@@ -147,16 +118,9 @@ export async function updateCalendar(e, date) {                     //Updates th
 
     let datos = {};
     datos.listProject = JSON.stringify(listDoc);
-    datos.date = date;
     datos = JSON.stringify(datos);
 
-    let peticion = await sendRequest('POST', 'application/json', datos,
-        "http://localhost:8080/api/tm/updateCalendarDate")
-
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
-    }
+    localStorage.setItem(`calendarList_${date}`, datos)
 
     buildErrorLog("green", "Datos guardados exitosamente");
 }
@@ -166,26 +130,13 @@ export async function updateCalendar(e, date) {                     //Updates th
 
 export async function loadCalendarList(date, surface) {  //When you click in a project button or onload
 
-    let bodyContent = {};
-    bodyContent.date = date;
-    bodyContent = JSON.stringify(bodyContent);
+    let item = localStorage.getItem(`calendarList_${date}`)
 
-
-    let peticion = await sendRequest('POST', 'application/json', bodyContent,
-        "http://localhost:8080/api/tm/getCalendarDate")
-
-    if (peticion.status == 404) {
+    if (item == "null") {
         surface.appendChild(createListElement("", "f", "f", false, surface))
     }
 
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
-    }
-
-    let project = await peticion.json();
-
-    loadProject(surface, project, false);
+    loadProject(surface, item, false);
 
 
 }
@@ -216,21 +167,14 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
 
 export async function loadListOnAction(id) {  //When you click in a project button or onload
 
-    let bodyContent = {};
-    bodyContent.listId = parseInt(id);
-    bodyContent = JSON.stringify(bodyContent);
+    let item = localStorage.getItem(`project-${id}`)
 
-    let peticion = await sendRequest('POST', 'application/json', bodyContent,
-        "http://localhost:8080/api/tm/getListData")
-
-    if (!peticion.ok) {
-        showErrors(peticion.status)
-        return null;
+    if (item == "null") {
+        item = {};
+        item.listProject = "";
     }
 
-    let project = await peticion.json();
-
-    loadProject(getSurfaceList(), project, true);
+    loadProject(getSurfaceList(), item, true);
     document.querySelectorAll(".list-box").forEach((p) => {
         if (p.dataset.id == id) {
             setActualProject(p);
@@ -238,6 +182,11 @@ export async function loadListOnAction(id) {  //When you click in a project butt
     })
 
 }
+
+
+
+
+
 
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
@@ -253,6 +202,15 @@ export function loadProject(surface, Project, main) {       		   //This is neede
         getListName().textContent = Project.listProjectName;
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 export function createProjectButtons(Lists) {       //This needs the next one
@@ -280,6 +238,18 @@ export function createProjectButtons(Lists) {       //This needs the next one
     });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 export async function loadProjectsFromUsers() {   //Gets all the projects ids
     let bodyContent = {}
     bodyContent.tiempo = "" + obtenerCookie("keep");

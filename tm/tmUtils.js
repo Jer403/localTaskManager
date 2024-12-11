@@ -177,11 +177,11 @@ export function cleanSurface(surface) {
 
 
 export function setCurrentListProject(id) {
-    localStorage.setItem("CurrentListProject", id)
+    localStorage.setItem("CurrentLocalListProject", id)
 }
 
 export function getCurrentListProject() {
-    return localStorage.getItem("CurrentListProject")
+    return localStorage.getItem("CurrentLocalListProject")
 }
 
 
