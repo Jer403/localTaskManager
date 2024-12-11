@@ -130,7 +130,7 @@ export async function updateCalendar(e, date) {                     //Updates th
 export async function loadCalendarList(date, surface) {  //When you click in a project button or onload
 
     let item = localStorage.getItem(`calendarList_${date}`)
-
+    console.log(item)
     if (item == "null") {
         surface.appendChild(createListElement("", "f", "f", false, surface))
         return;
@@ -191,8 +191,9 @@ export async function loadListOnAction(id) {  //When you click in a project butt
 
 export function loadProject(surface, Project, main) {       		   //This is needed in the above one  
     cleanSurface(surface);
+
+    let listDoc = JSON.parse(Project.listProject);
     if (listDoc) {
-        let listDoc = JSON.parse(Project.listProject);
         listDoc.forEach((l) => {
             const element = createListElement(l.txt, l.check, l.fav, main, surface);
             surface.appendChild(element);
@@ -219,7 +220,6 @@ export function createProjectButtons(Lists) {       //This needs the next one
         return null;
     }
 
-    console.log(Lists);
     if (Lists.length != 0) {
         Lists.map((key, value) => {
             let id = key.split("-")[1];
