@@ -1059,8 +1059,8 @@ spaan{
         align-items: stretch;
     }
     .calendar-list {
-        min-width: 73.6vw;
-        width: 73.6vw;
+        min-width: 73vw;
+        width: 73vw;
         max-width: 400px;
     }
     .top-section{
