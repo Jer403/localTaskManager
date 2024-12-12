@@ -8,6 +8,7 @@ import { appearInput, appearModBtns, checkFromBox, disappearModBtns, getActualCa
 
 
 export function calendarForwardMove(calendarSurface, dateForward) {
+    console.log(getCalendarWidth())
     if (!(calendarSurface.scrollLeft % getCalendarWidth() == 0)) {
         return;
     }
