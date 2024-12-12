@@ -36,8 +36,8 @@ const backward = document.getElementById("backward");
 const settingsAside = document.getElementById("settings-aside");
 const aside = document.getElementById("aside");
 
-const asideLeftBtn = document.getElementById("backward");
-const asideRightBtn = document.getElementById("backward");
+const asideLeftBtn = document.getElementById("aside-left-btn");
+const asideRightBtn = document.getElementById("aside-right-btn");
 
 
 const errorLog = document.querySelector(".error-log-message");
