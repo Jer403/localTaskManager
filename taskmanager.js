@@ -9,7 +9,7 @@ import { checkLang, getCurrentListProject, langChange, moonset, setIsSaveToTrue,
 import { checkIfUserDataIsLoaded, convertDateToString, getLang, getUser } from "./utils.js";
 
 
-const body = document.querySelector(".body");
+const body = document.querySelector("body");
 const checkboxs = document.querySelectorAll(".list-element-checkbox");
 const listbox = document.querySelectorAll(".list-element-box");
 const listInput = document.querySelectorAll(".list-element-texta");
