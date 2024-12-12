@@ -1099,4 +1099,7 @@ spaan{
     .list-element{
         height: auto;
     }
+    .list-element > .list-element-box{
+        height: auto;
+    }
 }
