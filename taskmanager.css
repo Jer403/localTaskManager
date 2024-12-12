@@ -52,17 +52,17 @@ body, html {
     display: flex;
     flex-direction: row;
     min-width: 1330px;
-    transition: background .8s;
+    transition: background-color .8s;
 }
 
 .aside{
     width: 280px;
     height: 100vh;
-    transition: color .8s background-color .8s border-color .8s;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     background: var(--background-light-secondary);
     border: 1px solid var(--border-light-primary);
+    transition: color .8s background-color .8s border-color .8s, transform .6s;
 }
 
 .main-article{
@@ -551,11 +551,11 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: color .8s, background-color .8s, border-color .8s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     background: var(--background-light-secondary);
     border: 1px solid var(--border-light-primary);
+    transition: color .8s background-color .8s border-color .8s, transform .6s;
 }
 
 .option-btns-box{
@@ -1090,7 +1090,7 @@ spaan{
 
 
     .aside-left-move{
-        transform: translateX(75vw);
+        transform: translateX(0vw);
     }
     .aside-right-move{
         transform: translateX(-60px);
