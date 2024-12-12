@@ -9,6 +9,7 @@ import { checkLang, getCurrentListProject, langChange, moonset, setIsSaveToTrue,
 import { checkIfUserDataIsLoaded, convertDateToString, getLang, getUser } from "./utils.js";
 
 
+const body = document.querySelector(".body");
 const checkboxs = document.querySelectorAll(".list-element-checkbox");
 const listbox = document.querySelectorAll(".list-element-box");
 const listInput = document.querySelectorAll(".list-element-texta");
@@ -116,6 +117,11 @@ window.addEventListener("load", async (e) => {
 	calendarSurface.appendChild(createCalendarList(convertDateToString(dateForward), dateForward.getMonth(), getLang()));
 	checkLang();
 	themeChange(true, themeBtn);
+})
+
+body.addEventListener("click", (e) => {
+	aside.classList.remove("aside-left-move")
+	settingsAside.classList.remove("aside-right-move")
 })
 
 errorLog.addEventListener("click", (e) => {
