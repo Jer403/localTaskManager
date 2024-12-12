@@ -1098,6 +1098,7 @@ spaan{
 
     .list-element{
         height: auto;
+        max-height: 500px ;  
     }
     .list-element > .list-element-box{
         height: auto;
