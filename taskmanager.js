@@ -63,6 +63,7 @@ setActualCalendarPosition(0)
 
 export function getCalendarWidth() {
 	if (window.innerWidth <= 900) {
+		listName.textContent = (calendarSurface.firstElementChild.offsetWidth + 20)
 		return (calendarSurface.firstElementChild.offsetWidth + 20)
 	}
 	return calendarWidth;
