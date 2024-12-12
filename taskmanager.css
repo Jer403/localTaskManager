@@ -740,7 +740,7 @@ spaan{
     margin: 10px 3px;
     position: absolute;
     background-color: var(--background-light-primary);
-    border: 1px solid var(--border-light-secondary);
+    border: 1px solid var(--border-light-primary);
     color: var(--buttons-light-icon);
     top: 0;
     font-size: 1.3rem;
