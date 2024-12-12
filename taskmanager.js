@@ -58,7 +58,8 @@ setDaysToBackward(0)
 setDaysToForward(0)
 setActualCalendarPosition(0)
 
-listName.textContent = window.innerHeight
+
+document.getElementById("list-name").textContent = window.innerHeight
 
 
 
