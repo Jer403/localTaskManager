@@ -737,9 +737,10 @@ spaan{
     width: 38px;
     height: 38px;
     border-radius: 6px;
+    margin: 10px 3px;
     position: absolute;
-    background-color: transparent;
-    border: 2px solid var(--border-light-tertiary);
+    background-color: var(--background-light-primary);
+    border: 1px solid var(--border-light-secondary);
     color: var(--buttons-light-icon);
     top: 0;
     display: none;
