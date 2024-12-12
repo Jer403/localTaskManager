@@ -63,7 +63,6 @@ body, html {
     border-bottom-right-radius: 8px;
     background: var(--background-light-secondary);
     border: 1px solid var(--border-light-primary);
-    transition: background .8s, border .8s;
 }
 
 .main-article{
@@ -734,6 +733,40 @@ spaan{
 
 
 
+.aside-btn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+} 
+
+.aside-right-btn{
+    right: 0;
+}
+
+.aside-left-btn{
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .main-dark{
@@ -1035,6 +1068,7 @@ spaan{
         overflow-y: auto;
     }
     .aside{
-        display: none;
+        width: 60vw;
+        position: absolute;
     }
 }
