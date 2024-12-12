@@ -174,12 +174,12 @@ backward.addEventListener("click", (e) => {
 })
 
 
-asideLeftBtn.addEventListener("click", () => {
+asideRightBtn.addEventListener("click", () => {
 	settingsAside.classList.toggle("aside-right-move")
 	aside.classList.remove("aside-left-move")
 })
 
-asideRightBtn.addEventListener("click", () => {
+asideLeftBtn.addEventListener("click", () => {
 	aside.classList.toggle("aside-left-move")
 	settingsAside.classList.remove("aside-right-move")
 })
