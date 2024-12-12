@@ -1095,4 +1095,8 @@ spaan{
     .aside-right-move{
         transform: translateX(-60px);
     }
+
+    .list-element{
+        height: auto;
+    }
 }
