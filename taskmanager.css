@@ -1068,7 +1068,9 @@ spaan{
         overflow-y: auto;
     }
     .aside{
-        width: 60vw;
+        width: 75vw;
         position: absolute;
+        z-index: 2000;
+        transform: translateX(-75vw);
     }
 }
