@@ -59,7 +59,6 @@ setDaysToForward(0)
 setActualCalendarPosition(0)
 
 
-document.getElementById("list-name").textContent = window.innerHeight
 
 
 
@@ -117,6 +116,7 @@ export function getSurfaceList() {
 window.addEventListener("load", async (e) => {
 	createProjectButtons(await loadProjectsFromUsers())
 
+	document.getElementById("list-name").textContent = window.innerHeight
 
 	calendarSurface.appendChild(createCalendarList(convertDateToString(dateBackward), dateBackward.getMonth(), getLang()));
 	calendarSurface.appendChild(createCalendarList(convertDateToString(date), date.getMonth(), getLang()));
