@@ -1093,7 +1093,8 @@ spaan{
         transform: translateX(0vw);
     }
     .aside-right-move{
-        transform: translateX(-60px);
+        transform: translateX(-60px);;
+        height: calc(100% - 45px);
     }
 
     .list-element{
