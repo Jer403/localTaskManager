@@ -62,7 +62,7 @@ body, html {
     border-bottom-right-radius: 8px;
     background: var(--background-light-secondary);
     border: 1px solid var(--border-light-primary);
-    transition: color .8s background-color .8s border-color .8s, transform .6s;
+    transition: color .8s, background-color .8s, border-color .8s, transform .6s;
 }
 
 .main-article{
@@ -529,11 +529,11 @@ body, html {
 }
 
 .fa-save{
-    transition: color .8s, background .8s, border-color .8s, font-size .2s;
+    transition: color .8s, background, .8s, border-color .8s, font-size .2s;
 }
 
 .fa-save:hover{
-    transition: color .8s, background .4s, border-color .8s, font-size .2s;
+    transition: color .8s, background, .4s, border-color .8s, font-size .2s;
 }
 
 
@@ -555,7 +555,7 @@ body, html {
     border-bottom-left-radius: 8px;
     background: var(--background-light-secondary);
     border: 1px solid var(--border-light-primary);
-    transition: color .8s background-color .8s border-color .8s, transform .6s;
+    transition: color .8s, background-color .8s, border-color .8s, transform .6s;
 }
 
 .option-btns-box{
