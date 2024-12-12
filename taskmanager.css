@@ -99,7 +99,7 @@ body, html {
 
 .main-section{
     width: 100%;
-    height: calc(100% - 350px);
+    height: calc(100% - 300px);
     transition: color .8s, background-color .8s, border-color .8s;
    
     border-top: 1px solid var(--border-light-primary);
@@ -1084,4 +1084,7 @@ spaan{
     .aside-btn {
         display: block;
     } 
+    .main-section{
+        padding: 0 5px;
+    }
 }
