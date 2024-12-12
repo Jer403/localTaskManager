@@ -92,7 +92,10 @@ export function getSurfaceList() {
 
 
 
-
+export function hideAsides(){
+ aside.classList.remove("aside-left-move")
+	settingsAside.classList.remove("aside-right-move")
+}
 
 
 
@@ -125,8 +128,7 @@ window.addEventListener("load", async (e) => {
 })
 
 body.addEventListener("click", (e) => {
-	aside.classList.remove("aside-left-move")
-	settingsAside.classList.remove("aside-right-move")
+	hideAsides();
 })
 
 errorLog.addEventListener("click", (e) => {
