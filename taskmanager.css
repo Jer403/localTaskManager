@@ -1087,4 +1087,12 @@ spaan{
     .main-section{
         padding: 0 2px;
     }
+
+
+    .aside-left-move{
+        transform: translateX(75vw);
+    }
+    .aside-right-move{
+        transform: translateX(-60px);
+    }
 }

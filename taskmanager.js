@@ -33,7 +33,12 @@ const refresh = document.getElementById("refresh");
 const forward = document.getElementById("forward");
 const backward = document.getElementById("backward");
 
-const aside = document.querySelector(".aside");
+const settingsAside = document.getElementById("settings-aside");
+const aside = document.getElementById("aside");
+
+const asideLeftBtn = document.getElementById("backward");
+const asideRightBtn = document.getElementById("backward");
+
 
 const errorLog = document.querySelector(".error-log-message");
 
@@ -167,6 +172,19 @@ forward.addEventListener("click", (e) => {
 backward.addEventListener("click", (e) => {
 	calendarBackwardMove(calendarSurface, dateBackward);
 })
+
+
+asideLeftBtn.addEventListener("click", () => {
+	settingsAside.classList.toggle("aside-right-move")
+	aside.classList.remove("aside-left-move")
+})
+
+asideRightBtn.addEventListener("click", () => {
+	aside.classList.toggle("aside-left-move")
+	settingsAside.classList.remove("aside-right-move")
+})
+
+
 
 
 
