@@ -179,13 +179,18 @@ backward.addEventListener("click", (e) => {
 	calendarBackwardMove(calendarSurface, dateBackward);
 })
 
+aside.addEventListener("click", (e) => {
+	e.stopPropagation();
+})
 
-asideRightBtn.addEventListener("click", () => {
+asideRightBtn.addEventListener("click", (e) => {
+	e.stopPropagation();
 	settingsAside.classList.toggle("aside-right-move")
 	aside.classList.remove("aside-left-move")
 })
 
-asideLeftBtn.addEventListener("click", () => {
+asideLeftBtn.addEventListener("click", (e) => {
+	e.stopPropagation();
 	aside.classList.toggle("aside-left-move")
 	settingsAside.classList.remove("aside-right-move")
 })
