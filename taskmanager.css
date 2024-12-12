@@ -737,7 +737,11 @@ spaan{
     width: 40px;
     height: 40px;
     position: absolute;
+    background-color: transparent;
+    border: 2px solid var(--border-light-tertiary);
+    color: var(--buttons-light-icon);
     top: 0;
+    display: none;
 } 
 
 .aside-right-btn{
@@ -1073,4 +1077,8 @@ spaan{
         z-index: 2000;
         transform: translateX(-75vw);
     }
+    
+    .aside-btn {
+        display: block;
+    } 
 }
