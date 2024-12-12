@@ -737,7 +737,7 @@ spaan{
     width: 38px;
     height: 38px;
     border-radius: 6px;
-    margin: 10px 3px;
+    margin: 10px 4px;
     position: absolute;
     background-color: var(--background-light-primary);
     border: 1px solid var(--border-light-primary);
@@ -1059,8 +1059,8 @@ spaan{
         align-items: stretch;
     }
     .calendar-list {
-        min-width: 75vw;
-        width: 75vw;
+        min-width: 73.6vw;
+        width: 73.6vw;
         max-width: 400px;
     }
     .top-section{
