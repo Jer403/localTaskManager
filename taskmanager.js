@@ -64,7 +64,6 @@ setActualCalendarPosition(0)
 
 export function getCalendarWidth() {
 	if (window.innerWidth <= 900) {
-		listName.textContent = (calendarSurface.firstElementChild.offsetWidth + 20)
 		return (calendarSurface.firstElementChild.offsetWidth + 20)
 	}
 	return calendarWidth;
@@ -93,7 +92,10 @@ export function getSurfaceList() {
 
 
 
-
+export function hideAsides(){
+ aside.classList.remove("aside-left-move")
+	settingsAside.classList.remove("aside-right-move")
+}
 
 
 
@@ -116,7 +118,7 @@ export function getSurfaceList() {
 window.addEventListener("load", async (e) => {
 	createProjectButtons(await loadProjectsFromUsers())
 
-	document.getElementById("list-name").textContent = window.innerHeight
+
 
 	calendarSurface.appendChild(createCalendarList(convertDateToString(dateBackward), dateBackward.getMonth(), getLang()));
 	calendarSurface.appendChild(createCalendarList(convertDateToString(date), date.getMonth(), getLang()));
@@ -126,8 +128,7 @@ window.addEventListener("load", async (e) => {
 })
 
 body.addEventListener("click", (e) => {
-	aside.classList.remove("aside-left-move")
-	settingsAside.classList.remove("aside-right-move")
+	hideAsides();
 })
 
 errorLog.addEventListener("click", (e) => {

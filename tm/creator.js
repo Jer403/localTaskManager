@@ -1,4 +1,4 @@
-import { getSaveList } from "../taskmanager.js";
+import { getSaveList, hideAsides } from "../taskmanager.js";
 import { appearInput, setIsSaveToFalse, setIsSaveToTrue } from "./tmUtils.js";
 import { convertStringDateToStringEn, convertStringDateToStringEs, getMonthEn, getMonthEs } from "../utils.js";
 import { copyText, dragLeaveEvent, dragOverEvent, dropEvent, editProjectName, hideModifiButtons, setInputEventListener, setLiEventListener, showModifiButtons } from "./events.js";
@@ -277,6 +277,7 @@ export function createOneProjectButton(nombre, id) {
             loadListOnAction(e.currentTarget.dataset.id);
             setActualProject(e.currentTarget);
             setIsSaveToTrue();
+            hideAsides();
         }
     })
     return button
