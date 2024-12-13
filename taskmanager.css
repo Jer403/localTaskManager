@@ -409,6 +409,7 @@ body, html {
     position: absolute;
     right: 2px;
     background-color: var(--background-light-primary);
+    transition: background-color .8s;
 }
 
 .action-btn{
