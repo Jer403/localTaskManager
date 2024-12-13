@@ -14,8 +14,8 @@
     --background-light-primary: #fff;
     --background-light-secondary: #fff;
     --background-light-tertiary: #f7f9fa;
-
     --text-light-color: #222; 
+
     --buttons-dark: #fff;
     --buttons-dark-icon: #eee;
     --buttons-dark-secondary: #2e4153; 
@@ -119,7 +119,7 @@ body, html {
     transition: color .8s, background-color .8s, border-color .8s;
 }
 .list-element:nth-child(even) .list-element-box .modifi-box span{
-    color: var(--buttons-dark-secondary);
+    color: var(--border-light-tertiary);
 }
 
 
