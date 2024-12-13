@@ -118,7 +118,7 @@ body, html {
     overflow-y: auto;
     transition: color .8s, background-color .8s, border-color .8s;
 }
-.list-element:nth-child(odd){
+.elements-list .list-element:nth-child(odd){
     background-color: rebeccapurple;
 }
 
