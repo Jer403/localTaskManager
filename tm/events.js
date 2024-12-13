@@ -149,9 +149,9 @@ export function dragOverEvent(e) {
     (dragElem.nameNode != "LI") ? elem = dragElem.closest("LI") : elem = dragElem;
 
     if (offsetY <= middle) {
-        elem.style = "border-top: 4px solid #fff"
+        elem.style = "box-shadow: 0 -2px 2px 0px;"
     } else if (offsetY > middle) {
-        elem.style = "border-bottom: 4px solid #fff"
+        elem.style = "box-shadow: 0 -2px 2px 0px;"
     }
 }
 
