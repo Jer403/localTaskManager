@@ -118,8 +118,8 @@ body, html {
     overflow-y: auto;
     transition: color .8s, background-color .8s, border-color .8s;
 }
-.list-element:nth-child(even) .list-element-box .modifi-box span{
-    color: var(--border-light-tertiary);
+.list-element:nth-child(even){
+    background-color: var(--background-light-tertiary);
 }
 
 
