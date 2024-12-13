@@ -751,6 +751,7 @@ spaan{
     color: var(--buttons-light-icon);
     top: 0;
     font-size: 1.3rem;
+    transition: color .8s, background-color .8s, border .8s;
     display: none;
 } 
 

@@ -32,7 +32,7 @@ export function createCalendarList(date, month, lang) {
     plus.appendChild(plusSpan);
     save.appendChild(saveSpan);
 
-    div.classList.add("action-btns-box");
+    div.classList.add("action-btns-box", "theme");
 
     p.classList.add("calendar-date");
     h.classList.add("calendar-month");
