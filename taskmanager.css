@@ -118,6 +118,10 @@ body, html {
     overflow-y: auto;
     transition: color .8s, background-color .8s, border-color .8s;
 }
+.elements-list:nth-child(odd) .list-element-box .modifi-box span{
+    color: rebeccapurple;
+}
+
 
 .list-element{
     border-bottom: 2px solid var(--border-light-secondary);
