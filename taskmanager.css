@@ -902,7 +902,7 @@ spaan{
     color: var(--buttons-dark-icon);
     border-color: var(--border-dark-primary);
 }
-.action-btns-box{
+.action-btns-box-dark{
     background-color: var(--background-dark-primary);
 }
 
