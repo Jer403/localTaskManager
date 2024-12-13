@@ -3,6 +3,7 @@
     --good: #82ff71;
     --red: #ee4d4d;
     --green: #68c55c;
+    --gold: #f5c93a;
     
     --buttons-light: #fff; 
     --buttons-light-secondary: #e6e6e6; 
@@ -950,7 +951,7 @@ spaan{
 }
 
 .actual-list{
-    outline: 2px solid rgb(214, 169, 19);
+    outline: 2px solid var(--gold);
     border: none;
 }
 
