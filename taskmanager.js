@@ -237,6 +237,6 @@ themeBtn.addEventListener("click", (e) => {
 
 staticLinks.forEach((s) => {
 	s.addEventListener("click", (e) => {
-		location.href = "http://localhost:8080/" + e.currentTarget.dataset.id;
+		location.href = "http://" + e.currentTarget.dataset.id;
 	})
 })
