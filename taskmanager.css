@@ -897,7 +897,7 @@ spaan{
 .lists-aside-section-dark .list-box{
     border-color: var(--border-dark-primary);
 }
-.aside-btn{
+.aside-btn-dark{
     background-color: var(--background-dark-primary);
     color: var(--buttons-dark-icon);
     border-color: var(--border-dark-primary);
