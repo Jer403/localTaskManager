@@ -118,6 +118,7 @@ body, html {
     overflow-y: auto;
     transition: color .8s, background-color .8s, border-color .8s;
 }
+
 .list-element:nth-child(even){
     background-color: var(--background-light-tertiary);
 }
@@ -811,6 +812,9 @@ spaan{
 .list-element-dark{
     color: var(--text-dark-color);
     border-color: var(--border-dark-secondary);
+}
+.list-element-dark:nth-child(even){
+    background-color: var(--buttons-dark-secondary);
 }
 .list-element-dark span{
     color: var(--buttons-dark);
