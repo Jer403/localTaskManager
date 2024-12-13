@@ -898,6 +898,7 @@ spaan{
 .aside-btn{
     background-color: var(--background-dark-primary);
     color: var(--buttons-dark-icon);
+    border-color: var(--border-dark-primary);
 }
 
 
