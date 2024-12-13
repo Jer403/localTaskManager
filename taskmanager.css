@@ -118,8 +118,8 @@ body, html {
     overflow-y: auto;
     transition: color .8s, background-color .8s, border-color .8s;
 }
-.elements-list .list-element:nth-child(odd){
-    background-color: rebeccapurple;
+.elements-list .list-element:nth-child(even) .list-element-box .modifi-box span{
+    color: rebeccapurple;
 }
 
 
