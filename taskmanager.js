@@ -206,12 +206,17 @@ asideLeftBtn.addEventListener("click", (e) => {
 
 links.forEach((l) => {
 	l.addEventListener("mouseenter", (e) => {
-		let l = e.currentTarget.nextElementSibling, value = (l.firstElementChild.scrollWidth + 60) + "px";
-		l.style.width = value;
+		if (window.innerWidth > 800) {
+			let l = e.currentTarget.nextElementSibling, value = (l.firstElementChild.scrollWidth + 60) + "px";
+			l.style.width = value;
+		}
 	})
 	l.addEventListener("mouseleave", (e) => {
-		e.currentTarget.nextElementSibling.style.width = "";
+		if (window.innerWidth > 800) {
+			e.currentTarget.nextElementSibling.style.width = "";
+		}
 	})
+
 })
 
 
