@@ -408,6 +408,7 @@ body, html {
     flex-direction: row;
     position: absolute;
     right: 2px;
+    background-color: var(--background-light-primary);
 }
 
 .action-btn{
@@ -900,8 +901,9 @@ spaan{
     color: var(--buttons-dark-icon);
     border-color: var(--border-dark-primary);
 }
-
-
+.action-btns-box{
+    background-color: var(--background-dark-primary);
+}
 
 
 
