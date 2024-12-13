@@ -92,8 +92,8 @@ export function getSurfaceList() {
 
 
 
-export function hideAsides(){
- aside.classList.remove("aside-left-move")
+export function hideAsides() {
+	aside.classList.remove("aside-left-move")
 	settingsAside.classList.remove("aside-right-move")
 }
 
@@ -204,17 +204,6 @@ asideLeftBtn.addEventListener("click", (e) => {
 
 
 
-
-
-linkAuth.addEventListener("click", (e) => {
-	if (e.currentTarget.dataset.id == "login") {
-		location.href = "http://localhost:8080/auth?from=taskmanager";
-	} else {
-		logout(linkAuth);
-	}
-});
-
-
 links.forEach((l) => {
 	l.addEventListener("mouseenter", (e) => {
 		let l = e.currentTarget.nextElementSibling, value = (l.firstElementChild.scrollWidth + 60) + "px";
@@ -223,22 +212,6 @@ links.forEach((l) => {
 	l.addEventListener("mouseleave", (e) => {
 		e.currentTarget.nextElementSibling.style.width = "";
 	})
-})
-
-
-linkAuth.addEventListener("mouseenter", (e) => {
-	let l = e.currentTarget.nextElementSibling, l2 = e.currentTarget.nextElementSibling.nextElementSibling, value;
-	if (l.classList.contains("hide")) {
-		value = (l2.firstElementChild.scrollWidth + 60) + "px";
-		l2.style.width = value;
-	} else {
-		value = (l.firstElementChild.scrollWidth + 60) + "px";
-		l.style.width = value;
-	}
-})
-linkAuth.addEventListener("mouseleave", (e) => {
-	e.currentTarget.nextElementSibling.style.width = "";
-	e.currentTarget.nextElementSibling.nextElementSibling.style.width = "";
 })
 
 
