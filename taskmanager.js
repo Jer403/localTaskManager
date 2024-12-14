@@ -140,7 +140,7 @@ errorLog.addEventListener("click", (e) => {
 
 paste.addEventListener("click", () => {
 	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
-		const element = createListElement(localStorage.getItem("clipboard"), "f", true, surfaceList);
+		const element = createListElement(localStorage.getItem("clipboard"), "f", "f", true, surfaceList);
 		surfaceList.appendChild(element);
 		saveList.classList.add("unsave")
 	}
@@ -155,7 +155,7 @@ edit.addEventListener("click", (e) => {
 
 plus.addEventListener("click", (e) => {
 	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
-		const element = createListElement("", "f", true, surfaceList);
+		const element = createListElement("", "f", "f", true, surfaceList);
 		surfaceList.appendChild(element);
 		e.currentTarget.nextElementSibling.classList.add("unsave")
 	}
