@@ -817,7 +817,7 @@ spaan{
     border-color: var(--border-dark-secondary);
 }
 .list-element-dark:nth-child(even){
-    background-color: var(--buttons-dark-secondary);
+    background-color: var(--background-dark-secondary);
 }
 .list-element-dark span{
     color: var(--buttons-dark);
